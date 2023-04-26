@@ -24,7 +24,7 @@ private readonly IUnitOfWork _unitOfWork;
 
 public async Task AddAsync(Product product, CancellationToken cancellationToken)
 {
-    await _userRepository.AddAsync(product, cancellationToken);
+    await _productRepository.AddAsync(product, cancellationToken);
     await _unitOfWork.SaveChangesAsync(cancellationToken);
 }
  
@@ -41,7 +41,7 @@ public async Task AddAsync(Product product, CancellationToken cancellationToken)
    ```
 ## Packages
 
-* EntityFramework Core 5.x
+* EntityFramework Core 7.x
 
 
  ### Design Patterns:
