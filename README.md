@@ -1,6 +1,7 @@
 # GenericRepositoryPatternNugetPackageV1.0.1
  A nuget package I wrote to use the generic repository pattern more efficiently.
-
+# Version
+.net 7.0
 # Install
  * dotnet add package EntityFrameworkCore.GenericRepository.Nuget 
 
@@ -42,12 +43,11 @@ public async Task AddAsync(Product product, CancellationToken cancellationToken)
 
 * EntityFramework Core 5.x
 
-## LIBRARIES 
-
 
  ### Design Patterns:
-      * Generic Repository                                                                                                                                      
-      * Unit Of Work                                                                                                                    
+      * Generic Repository   
+       * Unit Of Work    
+                                                                                                                     
      
 
       
