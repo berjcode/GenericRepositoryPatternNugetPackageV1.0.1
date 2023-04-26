@@ -10,3 +10,15 @@ C:\Users\abdbl\OneDrive\Masaüstü\GenericRepository.Library\GenericRepository.L
 C:\Users\abdbl\OneDrive\Masaüstü\GenericRepository.Library\GenericRepository.Library\obj\Debug\net7.0\refint\GenericRepository.Library.dll
 C:\Users\abdbl\OneDrive\Masaüstü\GenericRepository.Library\GenericRepository.Library\obj\Debug\net7.0\GenericRepository.Library.pdb
 C:\Users\abdbl\OneDrive\Masaüstü\GenericRepository.Library\GenericRepository.Library\obj\Debug\net7.0\ref\GenericRepository.Library.dll
+C:\Users\abdbl\OneDrive\Masaüstü\GenericRepositoryPatternNugetPackageV1.0.1\GenericRepository.Library\GenericRepository.Library\bin\Debug\net7.0\GenericRepository.Library.deps.json
+C:\Users\abdbl\OneDrive\Masaüstü\GenericRepositoryPatternNugetPackageV1.0.1\GenericRepository.Library\GenericRepository.Library\bin\Debug\net7.0\GenericRepository.Library.dll
+C:\Users\abdbl\OneDrive\Masaüstü\GenericRepositoryPatternNugetPackageV1.0.1\GenericRepository.Library\GenericRepository.Library\bin\Debug\net7.0\GenericRepository.Library.pdb
+C:\Users\abdbl\OneDrive\Masaüstü\GenericRepositoryPatternNugetPackageV1.0.1\GenericRepository.Library\GenericRepository.Library\obj\Debug\net7.0\GenericRepository.Library.csproj.AssemblyReference.cache
+C:\Users\abdbl\OneDrive\Masaüstü\GenericRepositoryPatternNugetPackageV1.0.1\GenericRepository.Library\GenericRepository.Library\obj\Debug\net7.0\GenericRepository.Library.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\abdbl\OneDrive\Masaüstü\GenericRepositoryPatternNugetPackageV1.0.1\GenericRepository.Library\GenericRepository.Library\obj\Debug\net7.0\GenericRepository.Library.AssemblyInfoInputs.cache
+C:\Users\abdbl\OneDrive\Masaüstü\GenericRepositoryPatternNugetPackageV1.0.1\GenericRepository.Library\GenericRepository.Library\obj\Debug\net7.0\GenericRepository.Library.AssemblyInfo.cs
+C:\Users\abdbl\OneDrive\Masaüstü\GenericRepositoryPatternNugetPackageV1.0.1\GenericRepository.Library\GenericRepository.Library\obj\Debug\net7.0\GenericRepository.Library.csproj.CoreCompileInputs.cache
+C:\Users\abdbl\OneDrive\Masaüstü\GenericRepositoryPatternNugetPackageV1.0.1\GenericRepository.Library\GenericRepository.Library\obj\Debug\net7.0\GenericRepository.Library.dll
+C:\Users\abdbl\OneDrive\Masaüstü\GenericRepositoryPatternNugetPackageV1.0.1\GenericRepository.Library\GenericRepository.Library\obj\Debug\net7.0\refint\GenericRepository.Library.dll
+C:\Users\abdbl\OneDrive\Masaüstü\GenericRepositoryPatternNugetPackageV1.0.1\GenericRepository.Library\GenericRepository.Library\obj\Debug\net7.0\GenericRepository.Library.pdb
+C:\Users\abdbl\OneDrive\Masaüstü\GenericRepositoryPatternNugetPackageV1.0.1\GenericRepository.Library\GenericRepository.Library\obj\Debug\net7.0\ref\GenericRepository.Library.dll

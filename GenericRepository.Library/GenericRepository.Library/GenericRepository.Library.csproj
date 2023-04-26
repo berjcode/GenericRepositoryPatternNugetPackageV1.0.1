@@ -4,10 +4,41 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>GenericRepository Pattern  and UnitOfWork Pattern</Title>
+    <PackageId>GenericRepositoryandUnitOfWorkPattern</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Abdullah Balıkçı</Authors>
+    <Company>berjcode</Company>
+    <Product>GenericRepository Pattern  and UnitOfWork Pattern</Product>
+    <Description>This package offers a more advanced build. It avoids complexity and ensures scalability by providing asynchronous and asynchronous methods.</Description>
+    <Copyright>Copyright 2023</Copyright>
+    <PackageProjectUrl>https://github.com/berjcode/GenericRepositoryPatternNugetPackageV1.0.1</PackageProjectUrl>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/berjcode/GenericRepositoryPatternNugetPackageV1.0.1</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>genericrepository unitofwork pattern</PackageTags>
+    <PackageReleaseNotes>First Version</PackageReleaseNotes>
+    <NeutralLanguage>tk</NeutralLanguage>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="..\..\..\icon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
