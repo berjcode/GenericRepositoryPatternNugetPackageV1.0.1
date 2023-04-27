@@ -12,6 +12,8 @@ public interface IRepositoryAsync<T> where T : class
     Task<T> GetByExpressionAsync(Expression<Func<T, bool>> expression, bool isTracking = true, CancellationToken cancellationToken = default);
     Task<T> GetFirstAsync(bool isTracking = true);
     Task<T> GetFirstAsync(bool isTracking, CancellationToken cancellationToken);
+    Task<bool> AnyAsync(Expression<Func<T, bool>> predicate); 
+    Task<int> CountAsync(Expression<Func<T,bool>> predicate =null);
     Task AddAsync(T entity, CancellationToken cancellationToken = default);
     Task AddRangeAsync(IEnumerable<T> entities, CancellationToken cancellationToken = default);
     Task AddRamgeAsync(ICollection<T> entities, CancellationToken cancellationToken = default);

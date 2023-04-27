@@ -37,6 +37,16 @@ public class GenericRepository<T, TContext> : IRepository<T>
         Entity.AddRange(entities);
     }
 
+    public bool Any(Expression<Func<T, bool>> predicate)
+    {
+        return Entity.Any(predicate);
+    }
+
+    public int Count(Expression<Func<T, bool>> predicate = null)
+    {
+        return (predicate == null ? Entity.Count() : Entity.Count(predicate));
+    }
+
     public void Delete(T entity)
     {
         Entity.Remove(entity);

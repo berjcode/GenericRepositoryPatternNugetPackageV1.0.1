@@ -7,10 +7,12 @@ public interface IRepository<T> where T : class
     IQueryable<T> GetAll(bool isTracking = true);
     IEnumerable<T> GetAllV2(bool isTracking = true);
     IList<T> GetAllV3(bool isTracking = true);
-   IQueryable<T> GetWhere(Expression<Func<T, bool>> expression, bool isTracking = true);
+    IQueryable<T> GetWhere(Expression<Func<T, bool>> expression, bool isTracking = true);
     IList<T> GetWhereV2(Expression<Func<T, bool>> expression, bool isTracking = true);
     T GetByExpression(Expression<Func<T, bool>> expression, bool isTracking = true);
     T GetFirst(bool isTracking = true);
+    bool Any(Expression<Func<T, bool>> predicate);
+    int Count(Expression<Func<T, bool>> predicate = null);
     void Add(T entity);
     void AddRange(ICollection<T> entities);
     void AddRange(IEnumerable<T> entities);

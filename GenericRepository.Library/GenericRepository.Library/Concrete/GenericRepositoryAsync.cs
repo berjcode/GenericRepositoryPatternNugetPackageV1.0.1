@@ -100,7 +100,7 @@ public class GenericRepositoryAsync<T, TContext> : IRepositoryAsync<T>
             result = Entity.AsNoTracking().AsEnumerable();
             return result;
         }
-           
+
         return result;
     }
 
@@ -112,7 +112,7 @@ public class GenericRepositoryAsync<T, TContext> : IRepositoryAsync<T>
             result = Entity.AsNoTracking().ToList();
             return result;
         }
-           
+
         return result;
     }
 
@@ -131,7 +131,7 @@ public class GenericRepositoryAsync<T, TContext> : IRepositoryAsync<T>
             result = Entity.AsNoTracking().ToList();
             return result;
         }
-            
+
         return result;
     }
     public async Task<T> GetByExpressionAsync(Expression<Func<T, bool>> expression, bool isTracking = true, CancellationToken cancellationToken = default)
@@ -198,5 +198,15 @@ public class GenericRepositoryAsync<T, TContext> : IRepositoryAsync<T>
     public void UpdateRange(IEnumerable<T> entities)
     {
         Entity.UpdateRange(entities);
+    }
+
+    public async Task<bool> AnyAsync(Expression<Func<T, bool>> predicate)
+    {
+        return await Entity.AnyAsync(predicate);
+    }
+
+    public async Task<int> CountAsync(Expression<Func<T, bool>> predicate = null)
+    {
+        return await (predicate == null ? Entity.CountAsync() : Entity.CountAsync(predicate));
     }
 }
