@@ -8,18 +8,20 @@
 * CancellationToken can be given as a parameter.
 * More methods will be added.
 
-# GenericRepositoryPatternNugetPackageV1.0.1
+# GenericRepositoryPatternNugetPackageV1.0.4
  A nuget package I wrote to use the generic repository pattern more efficiently.
 # Version
 .net 7.0
 # Install
- * dotnet add package EntityFrameworkCore.GenericRepository.Nuget 
+```
 
+  dotnet add package GenericRepositoryandUnitOfWorkPattern --version 1.0.5
+```
 # Use 
 ##Create Repository
 ```
 public interface IProductRepository : IRepositoryasync<Product> &&  IRepository<Product>
-public class ProductRepository : Repository<Product, MyContext> ,IProductRepository
+public class ProductRepository : GenericRepositoryAsync<Product, MyContext> ,IProductRepository
 ```
 ## Create Service
 ```
@@ -68,7 +70,7 @@ public void  AddAsync(Product product)
    ```
 ## Packages
 
-* EntityFramework Core 5.x
+* EntityFramework Core 7.0.5
 
 
  ### Design Patterns:
