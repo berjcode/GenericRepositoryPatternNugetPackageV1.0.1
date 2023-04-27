@@ -7,7 +7,7 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>GenericRepository Pattern  and UnitOfWork Pattern</Title>
     <PackageId>GenericRepositoryandUnitOfWorkPattern</PackageId>
-    <Version>1.0.5</Version>
+    <Version>1.0.6</Version>
     <Authors>Abdullah Balıkçı</Authors>
     <Company>berjcode</Company>
     <Product>GenericRepository Pattern  and UnitOfWork Pattern</Product>

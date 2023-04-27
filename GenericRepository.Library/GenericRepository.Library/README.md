@@ -15,7 +15,7 @@
 # Install
 ```
 
-  dotnet add package EntityFrameworkCore.GenericRepository.Nuget 
+  dotnet add package GenericRepositoryandUnitOfWorkPattern --version 1.0.5
 ```
 # Use 
 ##Create Repository
