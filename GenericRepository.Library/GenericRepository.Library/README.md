@@ -8,7 +8,7 @@
 * CancellationToken can be given as a parameter.
 * More methods will be added.
 
-# GenericRepositoryPatternNugetPackageV1.0.1
+# GenericRepositoryPatternNugetPackageV1.0.4
  A nuget package I wrote to use the generic repository pattern more efficiently.
 # Version
 .net 7.0

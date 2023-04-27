@@ -7,7 +7,7 @@ namespace ExampleProjectWebAPI.Repositories
 {
     public class ProductRepositoryAsync : GenericRepositoryAsync<Product, ExampleDbContext>, IProductRepositoryAsync
     {
-        public ProductRepositoryAsync(ExampleDbContext context) : base(context, context.Set<Product>())
+        public ProductRepositoryAsync(ExampleDbContext context) : base(context)
         {
             
         }

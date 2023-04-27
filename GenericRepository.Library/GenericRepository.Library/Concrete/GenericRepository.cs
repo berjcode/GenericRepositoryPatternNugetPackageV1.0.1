@@ -11,10 +11,10 @@ public class GenericRepository<T, TContext> : IRepository<T>
     private readonly TContext _context;
     private DbSet<T> Entity;
 
-    public GenericRepository(TContext context, DbSet<T> entity)
+    public GenericRepository(TContext context)
     {
         _context = context;
-        Entity = entity;
+        Entity = _context.Set<T>();
     }
 
     public void Add(T entity)

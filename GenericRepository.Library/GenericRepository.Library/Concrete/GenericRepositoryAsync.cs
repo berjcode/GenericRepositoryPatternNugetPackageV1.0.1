@@ -10,7 +10,7 @@ public class GenericRepositoryAsync<T, TContext> : IRepositoryAsync<T>
     private readonly TContext _context;
     private DbSet<T> Entity;
 
-    public GenericRepositoryAsync(TContext context, DbSet<T> entity)
+    public GenericRepositoryAsync(TContext context)
     {
         _context = context;
         Entity = _context.Set<T>();
