@@ -70,7 +70,7 @@ public void  AddAsync(Product product)
    ```
 ## Packages
 
-* EntityFramework Core 5.x
+* EntityFramework Core 7.0.5
 
 
  ### Design Patterns:
