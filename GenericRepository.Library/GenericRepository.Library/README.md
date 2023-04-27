@@ -13,13 +13,15 @@
 # Version
 .net 7.0
 # Install
- * dotnet add package EntityFrameworkCore.GenericRepository.Nuget 
+```
 
+  dotnet add package EntityFrameworkCore.GenericRepository.Nuget 
+```
 # Use 
 ##Create Repository
 ```
 public interface IProductRepository : IRepositoryasync<Product> &&  IRepository<Product>
-public class ProductRepository : Repository<Product, MyContext> ,IProductRepository
+public class ProductRepository : GenericRepositoryAsync<Product, MyContext> ,IProductRepository
 ```
 ## Create Service
 ```

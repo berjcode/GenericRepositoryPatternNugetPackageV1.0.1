@@ -83,7 +83,7 @@ public class GenericRepositoryAsync<T, TContext> : IRepositoryAsync<T>
         Entity.RemoveRange(entities);
     }
 
-    public IQueryable<T> GetAll(bool isTracking = false)
+    public IQueryable<T> GetAll(bool isTracking = true)
     {
         var result = Entity.AsQueryable();
         if (!isTracking)
@@ -92,7 +92,7 @@ public class GenericRepositoryAsync<T, TContext> : IRepositoryAsync<T>
         return result;
     }
 
-    public IEnumerable<T> GetAllV2(bool isTracking = false)
+    public IEnumerable<T> GetAllV2(bool isTracking = true)
     {
         var result = Entity.AsEnumerable();
         if (!isTracking)
@@ -104,7 +104,7 @@ public class GenericRepositoryAsync<T, TContext> : IRepositoryAsync<T>
         return result;
     }
 
-    public IList<T> GetAllV3(bool isTracking = false)
+    public IList<T> GetAllV3(bool isTracking = true)
     {
         var result = Entity.ToList();
         if (!isTracking)
@@ -116,14 +116,14 @@ public class GenericRepositoryAsync<T, TContext> : IRepositoryAsync<T>
         return result;
     }
 
-    public IQueryable<T> GetWhere(Expression<Func<T, bool>> expression, bool isTracking = false)
+    public IQueryable<T> GetWhere(Expression<Func<T, bool>> expression, bool isTracking = true)
     {
         var result = Entity.AsQueryable();
         if (!isTracking)
             result = result.AsNoTracking();
         return result;
     }
-    public IList<T> GetWhereV2(Expression<Func<T, bool>> expression, bool isTracking = false)
+    public IList<T> GetWhereV2(Expression<Func<T, bool>> expression, bool isTracking = true)
     {
         var result = Entity.ToList();
         if (!isTracking)
@@ -134,7 +134,7 @@ public class GenericRepositoryAsync<T, TContext> : IRepositoryAsync<T>
             
         return result;
     }
-    public async Task<T> GetByExpressionAsync(Expression<Func<T, bool>> expression, bool isTracking = false, CancellationToken cancellationToken = default)
+    public async Task<T> GetByExpressionAsync(Expression<Func<T, bool>> expression, bool isTracking = true, CancellationToken cancellationToken = default)
     {
         T entity = null;
         if (isTracking)
@@ -150,7 +150,7 @@ public class GenericRepositoryAsync<T, TContext> : IRepositoryAsync<T>
 
 
 
-    public async Task<T> GetFirstAsync(bool isTracking = false)
+    public async Task<T> GetFirstAsync(bool isTracking = true)
     {
         T entity = null;
         if (isTracking)

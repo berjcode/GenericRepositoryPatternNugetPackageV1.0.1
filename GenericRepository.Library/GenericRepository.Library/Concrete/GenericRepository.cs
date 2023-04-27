@@ -104,7 +104,7 @@ public class GenericRepository<T, TContext> : IRepository<T>
         Entity.RemoveRange(entities);
     }
 
-    public IQueryable<T> GetAll(bool isTracking = false)
+    public IQueryable<T> GetAll(bool isTracking = true)
     {
         var result = Entity.AsQueryable();
         if (!isTracking)
@@ -112,7 +112,7 @@ public class GenericRepository<T, TContext> : IRepository<T>
         return result;
     }
 
-    public IEnumerable<T> GetAllV2(bool isTracking = false)
+    public IEnumerable<T> GetAllV2(bool isTracking = true)
     {
         var result = Entity.AsEnumerable();
         if (!isTracking)
@@ -124,7 +124,7 @@ public class GenericRepository<T, TContext> : IRepository<T>
         return result;
     }
 
-    public IList<T> GetAllV3(bool isTracking = false)
+    public IList<T> GetAllV3(bool isTracking = true)
     {
         var result = Entity.ToList();
         if (!isTracking)
@@ -136,7 +136,7 @@ public class GenericRepository<T, TContext> : IRepository<T>
         return result;
     }
 
-    public T GetByExpression(Expression<Func<T, bool>> expression, bool isTracking = false)
+    public T GetByExpression(Expression<Func<T, bool>> expression, bool isTracking = true)
     {
         T entity = null;
         if (isTracking)
@@ -150,7 +150,7 @@ public class GenericRepository<T, TContext> : IRepository<T>
         return entity;
     }
 
-    public T GetFirst(bool isTracking = false)
+    public T GetFirst(bool isTracking = true)
     {
         T entity = null;
         if (isTracking)
@@ -165,7 +165,7 @@ public class GenericRepository<T, TContext> : IRepository<T>
         return entity;
     }
 
-    public IQueryable<T> GetWhere(Expression<Func<T, bool>> expression, bool isTracking = false)
+    public IQueryable<T> GetWhere(Expression<Func<T, bool>> expression, bool isTracking = true)
     {
         var result = Entity.AsQueryable();
         if (!isTracking)
@@ -173,7 +173,7 @@ public class GenericRepository<T, TContext> : IRepository<T>
         return result;
     }
 
-    public IList<T> GetWhereV2(Expression<Func<T, bool>> expression, bool isTracking = false)
+    public IList<T> GetWhereV2(Expression<Func<T, bool>> expression, bool isTracking = true)
     {
         var result = Entity.ToList();
         if (!isTracking)
