@@ -60,7 +60,6 @@ public void  AddAsync(Product product)
 }
 ```
 
-
 ## Warning
    * Dependency Injection
    ```
@@ -71,7 +70,6 @@ public void  AddAsync(Product product)
 ## Packages
 
 * EntityFramework Core 7.0.5
-
 
  ### Design Patterns:
     * Generic Repository   
