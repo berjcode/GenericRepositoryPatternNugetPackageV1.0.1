@@ -7,7 +7,7 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>GenericRepository Pattern  and UnitOfWork Pattern</Title>
     <PackageId>GenericRepositoryandUnitOfWorkPattern</PackageId>
-    <Version>1.0.6</Version>
+    <Version>1.1.1</Version>
     <Authors>Abdullah Balıkçı</Authors>
     <Company>berjcode</Company>
     <Product>GenericRepository Pattern  and UnitOfWork Pattern</Product>
@@ -19,7 +19,8 @@
     <RepositoryUrl>https://github.com/berjcode/GenericRepositoryPatternNugetPackageV1.0.1</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>genericrepository unitofwork pattern</PackageTags>
-    <PackageReleaseNotes>First Version</PackageReleaseNotes>
+    <PackageReleaseNotes>all bugs have been fixed.  Readme has been updated.
+The sample project has been updated to webAPI.</PackageReleaseNotes>
     <NeutralLanguage>tk</NeutralLanguage>
   </PropertyGroup>
 
