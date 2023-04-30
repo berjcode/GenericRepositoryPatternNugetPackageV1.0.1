@@ -8,14 +8,17 @@
 * CancellationToken can be given as a parameter.
 * More methods will be added.
 
-# GenericRepositoryPatternNugetPackageV1.1.1
+
+Errors are corrected as a result of feedback.
+
+# GenericRepositoryPatternNugetPackageV1.1.2
  A nuget package I wrote to use the generic repository pattern more efficiently.
 # Version
 .net 7.0
 # Install
 ```
 
-  dotnet add package GenericRepositoryandUnitOfWorkPattern --version 1.1.1
+  dotnet add package GenericRepositoryandUnitOfWorkPattern --version 1.1.2
 ```
 # Use 
 ##Create Repository
@@ -84,20 +87,21 @@ public interface IProductRepositoryAsync : IRepositoryAsync<Product> {}
   ## IRepositoryAsync Methods
 
    ```
-    IQueryable<T> GetAll(bool isTracking = true);
-    IEnumerable<T> GetAllV2(bool isTracking = true);
-    IList<T> GetAllV3(bool isTracking = true);
+     IQueryable<T> GetAll(bool isTracking = true);
+    IQueryable<T> GetAllExpressionAsync(Expression<Func<T, bool>> expression, bool isTracking = true);
+    IEnumerable<T> GetAllEnumerable(bool isTracking = true);
+    IList<T> GetAllWithList(bool isTracking = true);
     IQueryable<T> GetWhere(Expression<Func<T, bool>> expression, bool isTracking = true);
-    IList<T> GetWhereV2(Expression<Func<T, bool>> expression, bool isTracking = true);
-    Task<T> GetByExpressionAsync(Expression<Func<T, bool>> expression, bool isTracking = true, CancellationToken cancellationToken = default);
+    IList<T> GetWhereList(Expression<Func<T, bool>> expression, bool isTracking = true);
+    Task<T> GetFirstByExpressionAsync(Expression<Func<T, bool>> expression, bool isTracking = true, CancellationToken cancellationToken = default);
     Task<T> GetFirstAsync(bool isTracking = true);
     Task<T> GetFirstAsync(bool isTracking, CancellationToken cancellationToken);
-    Task<bool> AnyAsync(Expression<Func<T, bool>> predicate); 
-    Task<int> CountAsync(Expression<Func<T,bool>> predicate =null);
+    Task<bool> AnyAsync(Expression<Func<T, bool>> predicate);
+    Task<int> CountAsync(Expression<Func<T, bool>> predicate = null);
     Task AddAsync(T entity, CancellationToken cancellationToken = default);
     Task AddRangeAsync(IEnumerable<T> entities, CancellationToken cancellationToken = default);
     Task AddRamgeAsync(ICollection<T> entities, CancellationToken cancellationToken = default);
-    Task AddRangeAsync (IList<T> entities, CancellationToken cancellationToken = default);
+    Task AddRangeAsync(IList<T> entities, CancellationToken cancellationToken = default);
     void Update(T entity);
     void UpdateRange(ICollection<T> entities);
     void UpdateRange(IEnumerable<T> entities);
@@ -109,17 +113,19 @@ public interface IProductRepositoryAsync : IRepositoryAsync<Product> {}
     void DeleteRange(IEnumerable<T> entities);
     void DeleteRange(ICollection<T> entities);
     void DeleteRange(IList<T> entities);
+
    ```
 
   ## IRepository
 
    ```
     IQueryable<T> GetAll(bool isTracking = true);
-    IEnumerable<T> GetAllV2(bool isTracking = true);
-    IList<T> GetAllV3(bool isTracking = true);
+    IQueryable<T> GetAllExpression(Expression<Func<T, bool>> expression, bool isTracking = true);
+    IEnumerable<T> GetAllEnumerable(bool isTracking = true);
+    IList<T> GetAllWithList(bool isTracking = true);
     IQueryable<T> GetWhere(Expression<Func<T, bool>> expression, bool isTracking = true);
-    IList<T> GetWhereV2(Expression<Func<T, bool>> expression, bool isTracking = true);
-    T GetByExpression(Expression<Func<T, bool>> expression, bool isTracking = true);
+    IList<T> GetWhereWithList(Expression<Func<T, bool>> expression, bool isTracking = true);
+    T GetFirstByExpression(Expression<Func<T, bool>> expression, bool isTracking = true);
     T GetFirst(bool isTracking = true);
     bool Any(Expression<Func<T, bool>> predicate);
     int Count(Expression<Func<T, bool>> predicate = null);

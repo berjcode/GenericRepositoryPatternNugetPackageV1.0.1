@@ -522,7 +522,7 @@
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
-    "version": "1.1.1",
+    "version": "1.1.2",
     "restore": {
       "projectUniqueName": "C:\\Users\\abdbl\\OneDrive\\Masaüstü\\GenericRepositoryPatternNugetPackageV1.0.1\\GenericRepository.Library\\GenericRepository.Library\\GenericRepository.Library.csproj",
       "projectName": "GenericRepositoryandUnitOfWorkPattern",
