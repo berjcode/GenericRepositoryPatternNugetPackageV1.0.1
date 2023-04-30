@@ -15,7 +15,7 @@
 # Install
 ```
 
-  dotnet add package GenericRepositoryandUnitOfWorkPattern --version 1.1.1
+  dotnet add package GenericRepositoryandUnitOfWorkPattern --version 1.1.2
 ```
 # Use 
 ##Create Repository

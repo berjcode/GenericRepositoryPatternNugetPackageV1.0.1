@@ -122,7 +122,7 @@ public class GenericRepository<T, TContext> : IRepository<T>
         return result;
     }
 
-    public IEnumerable<T> GetAllV2(bool isTracking = true)
+    public IEnumerable<T> GetAllEnumerable(bool isTracking = true)
     {
         var result = Entity.AsEnumerable();
         if (!isTracking)
@@ -134,7 +134,15 @@ public class GenericRepository<T, TContext> : IRepository<T>
         return result;
     }
 
-    public IList<T> GetAllV3(bool isTracking = true)
+    public IQueryable<T> GetAllExpression(Expression<Func<T, bool>> expression, bool isTracking = true)
+    {
+        var result = Entity.Where(expression).AsQueryable();
+        if (!isTracking)
+            result = result.AsNoTracking();
+        return result;
+    }
+
+    public IList<T> GetAllWithList(bool isTracking = true)
     {
         var result = Entity.ToList();
         if (!isTracking)
@@ -146,7 +154,7 @@ public class GenericRepository<T, TContext> : IRepository<T>
         return result;
     }
 
-    public T GetByExpression(Expression<Func<T, bool>> expression, bool isTracking = true)
+    public T GetFirstByExpression(Expression<Func<T, bool>> expression, bool isTracking = true)
     {
         T entity = null;
         if (isTracking)
@@ -177,15 +185,15 @@ public class GenericRepository<T, TContext> : IRepository<T>
 
     public IQueryable<T> GetWhere(Expression<Func<T, bool>> expression, bool isTracking = true)
     {
-        var result = Entity.AsQueryable();
+        var result = Entity.Where(expression).AsQueryable();
         if (!isTracking)
             result = result.AsNoTracking();
         return result;
     }
 
-    public IList<T> GetWhereV2(Expression<Func<T, bool>> expression, bool isTracking = true)
+    public IList<T> GetWhereWithList(Expression<Func<T, bool>> expression, bool isTracking = true)
     {
-        var result = Entity.ToList();
+        var result = Entity.Where(expression).ToList();
         if (!isTracking)
         {
             result = Entity.AsNoTracking().ToList();
