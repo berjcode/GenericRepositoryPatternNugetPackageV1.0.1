@@ -21,7 +21,7 @@ Errors are corrected as a result of feedback.
   dotnet add package GenericRepositoryandUnitOfWorkPattern --version 1.1.2
 ```
 # Use 
-##Create Repository
+## Create Repository
 ```
 //Interface- Abstract 
 public interface IProductRepositoryAsync : IRepositoryAsync<Product> {} 
@@ -79,9 +79,6 @@ public interface IProductRepositoryAsync : IRepositoryAsync<Product> {}
  ### Design Patterns:
     * Generic Repository   
     * Unit Of Work    
-                                                                                                                     
-   ###    By Abdullah Balikci - berjcode
-
       
        
   ## IRepositoryAsync Methods
@@ -147,4 +144,6 @@ public interface IProductRepositoryAsync : IRepositoryAsync<Product> {}
     void DeleteRange(IList<T> entities);
    ```
 
- 
+                                                                                                                      
+   ###    By Abdullah Balikci - berjcode
+
