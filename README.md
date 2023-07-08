@@ -1,4 +1,4 @@
-# Feature
+# Features
 
 [![MIT License][license-shield]][license-url]
 
