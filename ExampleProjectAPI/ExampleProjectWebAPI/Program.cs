@@ -1,4 +1,6 @@
+using berjmapper;
 using ExampleProjectWebAPI.Context;
+using ExampleProjectWebAPI.Entities;
 using ExampleProjectWebAPI.Repositories;
 using GenericRepository.Library;
 using GenericRepository.Library.Concrete;

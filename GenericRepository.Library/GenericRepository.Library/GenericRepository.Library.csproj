@@ -7,7 +7,7 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>GenericRepository Pattern  and UnitOfWork Pattern</Title>
     <PackageId>GenericRepositoryandUnitOfWorkPattern</PackageId>
-    <Version>1.1.2</Version>
+    <Version>1.1.3</Version>
     <Authors>Abdullah Balıkçı</Authors>
     <Company>berjcode</Company>
     <Product>GenericRepository Pattern  and UnitOfWork Pattern</Product>
@@ -19,10 +19,7 @@
     <RepositoryUrl>https://github.com/berjcode/GenericRepositoryPatternNugetPackageV1.0.1</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>genericrepository unitofwork pattern</PackageTags>
-    <PackageReleaseNotes>Added missing expression in GetWhere methods.
-The method names named as V2, V3 have been changed.
-Added GetAllExpression method
-</PackageReleaseNotes>
+    <PackageReleaseNotes>A general adjustment was made. There is no changing code.</PackageReleaseNotes>
     <NeutralLanguage>tk</NeutralLanguage>
   </PropertyGroup>
 

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\abdbl\\OneDrive\\Masaüstü\\GenericRepositoryPatternNugetPackageV1.0.1\\GenericRepository.Library\\GenericRepository.Library\\GenericRepository.Library.csproj": {}
+    "C:\\Users\\abdbl\\OneDrive\\Masaüstü\\nuget\\GenericRepositoryPatternNugetPackageV1.0.1\\GenericRepository.Library\\GenericRepository.Library\\GenericRepository.Library.csproj": {}
   },
   "projects": {
-    "C:\\Users\\abdbl\\OneDrive\\Masaüstü\\GenericRepositoryPatternNugetPackageV1.0.1\\GenericRepository.Library\\GenericRepository.Library\\GenericRepository.Library.csproj": {
-      "version": "1.1.2",
+    "C:\\Users\\abdbl\\OneDrive\\Masaüstü\\nuget\\GenericRepositoryPatternNugetPackageV1.0.1\\GenericRepository.Library\\GenericRepository.Library\\GenericRepository.Library.csproj": {
+      "version": "1.1.3",
       "restore": {
-        "projectUniqueName": "C:\\Users\\abdbl\\OneDrive\\Masaüstü\\GenericRepositoryPatternNugetPackageV1.0.1\\GenericRepository.Library\\GenericRepository.Library\\GenericRepository.Library.csproj",
+        "projectUniqueName": "C:\\Users\\abdbl\\OneDrive\\Masaüstü\\nuget\\GenericRepositoryPatternNugetPackageV1.0.1\\GenericRepository.Library\\GenericRepository.Library\\GenericRepository.Library.csproj",
         "projectName": "GenericRepositoryandUnitOfWorkPattern",
-        "projectPath": "C:\\Users\\abdbl\\OneDrive\\Masaüstü\\GenericRepositoryPatternNugetPackageV1.0.1\\GenericRepository.Library\\GenericRepository.Library\\GenericRepository.Library.csproj",
+        "projectPath": "C:\\Users\\abdbl\\OneDrive\\Masaüstü\\nuget\\GenericRepositoryPatternNugetPackageV1.0.1\\GenericRepository.Library\\GenericRepository.Library\\GenericRepository.Library.csproj",
         "packagesPath": "C:\\Users\\abdbl\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\abdbl\\OneDrive\\Masaüstü\\GenericRepositoryPatternNugetPackageV1.0.1\\GenericRepository.Library\\GenericRepository.Library\\obj\\",
+        "outputPath": "C:\\Users\\abdbl\\OneDrive\\Masaüstü\\nuget\\GenericRepositoryPatternNugetPackageV1.0.1\\GenericRepository.Library\\GenericRepository.Library\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -66,7 +66,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
         }
       }
     }

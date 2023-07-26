@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "eaLPHy71gMp2pSeMnzhtnP2RPPcYRVGRixiy55AW9HNjn7T0ZmwaAuspe+Je5GtH9sW6k8ZptritP72v6SGSRA==",
+  "dgSpecHash": "xd4gBtZsWhQmARq4vFfWxQnjanTkqqpErM3ciVJ8/tOpSsu1VkgfCsD16yyGmpQJlKQ+xI3f/ALt2JDrWB8fuw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\abdbl\\OneDrive\\Masaüstü\\GenericRepositoryPatternNugetPackageV1.0.1\\GenericRepository.Library\\GenericRepository.Library\\GenericRepository.Library.csproj",
+  "projectFilePath": "C:\\Users\\abdbl\\OneDrive\\Masaüstü\\nuget\\GenericRepositoryPatternNugetPackageV1.0.1\\GenericRepository.Library\\GenericRepository.Library\\GenericRepository.Library.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\abdbl\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.5\\microsoft.entityframeworkcore.7.0.5.nupkg.sha512",
     "C:\\Users\\abdbl\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.5\\microsoft.entityframeworkcore.abstractions.7.0.5.nupkg.sha512",

@@ -2,6 +2,9 @@
 
 namespace GenericRepository.Library;
 
+/// <summary>
+/// Any entity can be given. T has to be a class.  It includes asynchronous methods.
+/// </summary>
 public interface IRepositoryAsync<T> where T : class
 {
     IQueryable<T> GetAll(bool isTracking = true);

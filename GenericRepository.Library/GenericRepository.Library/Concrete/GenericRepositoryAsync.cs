@@ -7,15 +7,20 @@ public class GenericRepositoryAsync<T, TContext> : IRepositoryAsync<T>
     where T : class
     where TContext : DbContext
 {
-    private readonly TContext _context;
+    #region Fields
     private DbSet<T> Entity;
+    private readonly TContext _context;
+    #endregion
 
+    #region Ctor
     public GenericRepositoryAsync(TContext context)
     {
         _context = context;
         Entity = _context.Set<T>();
     }
+    #endregion
 
+    #region Methods
     public async Task AddAsync(T entity, CancellationToken cancellationToken = default)
     {
         await Entity.AddAsync(entity, cancellationToken);
@@ -47,8 +52,6 @@ public class GenericRepositoryAsync<T, TContext> : IRepositoryAsync<T>
         T entity = await Entity.Where(expression).FirstOrDefaultAsync(cancellationToken);
         Entity.Remove(entity);
     }
-
-
 
     public async Task DeleteByIdAsync(int id)
     {
@@ -98,6 +101,7 @@ public class GenericRepositoryAsync<T, TContext> : IRepositoryAsync<T>
         if (!isTracking)
         {
             result = Entity.AsNoTracking().AsEnumerable();
+
             return result;
         }
 
@@ -110,6 +114,7 @@ public class GenericRepositoryAsync<T, TContext> : IRepositoryAsync<T>
         if (!isTracking)
         {
             result = Entity.AsNoTracking().ToList();
+
             return result;
         }
 
@@ -121,6 +126,7 @@ public class GenericRepositoryAsync<T, TContext> : IRepositoryAsync<T>
         var result = Entity.Where(expression).AsQueryable();
         if (!isTracking)
             result = result.AsNoTracking();
+
         return result;
     }
     public IList<T> GetWhereList(Expression<Func<T, bool>> expression, bool isTracking = true)
@@ -145,6 +151,7 @@ public class GenericRepositoryAsync<T, TContext> : IRepositoryAsync<T>
         {
             entity = await Entity.Where(expression).AsNoTracking().FirstOrDefaultAsync(cancellationToken);
         }
+
         return entity;
     }
 
@@ -176,13 +183,9 @@ public class GenericRepositoryAsync<T, TContext> : IRepositoryAsync<T>
         {
             entity = await Entity.AsNoTracking().FirstOrDefaultAsync(cancellationToken);
         }
+
         return entity;
     }
-
-
-
-
-
 
 
     public void Update(T entity)
@@ -210,8 +213,6 @@ public class GenericRepositoryAsync<T, TContext> : IRepositoryAsync<T>
         return await (predicate == null ? Entity.CountAsync() : Entity.CountAsync(predicate));
     }
 
-
-
     public IQueryable<T> GetAllExpressionAsync(Expression<Func<T, bool>> expression, bool isTracking = true)
     {
         var result = Entity.Where(expression).AsQueryable();
@@ -220,4 +221,5 @@ public class GenericRepositoryAsync<T, TContext> : IRepositoryAsync<T>
 
         return result;
     }
+    #endregion
 }

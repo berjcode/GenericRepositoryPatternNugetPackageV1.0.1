@@ -8,15 +8,20 @@ public class GenericRepository<T, TContext> : IRepository<T>
     where T : class
     where TContext : DbContext
 {
-    private readonly TContext _context;
+    #region Fields
     private DbSet<T> Entity;
+    private readonly TContext _context;
+    #endregion
 
+    #region Ctor
     public GenericRepository(TContext context)
     {
         _context = context;
         Entity = _context.Set<T>();
     }
+    #endregion
 
+    #region Methods
     public void Add(T entity)
     {
         Entity.AddAsync(entity);
@@ -58,6 +63,7 @@ public class GenericRepository<T, TContext> : IRepository<T>
         if (entity != null)
         {
             Entity.Remove(entity);
+
             return entity;
         }
         return null;
@@ -69,6 +75,7 @@ public class GenericRepository<T, TContext> : IRepository<T>
         if (entity != null)
         {
             Entity.Remove(entity);
+
             return entity;
         }
 
@@ -81,6 +88,7 @@ public class GenericRepository<T, TContext> : IRepository<T>
         if (entity != null)
         {
             Entity.Remove(entity);
+
             return entity;
         }
 
@@ -93,6 +101,7 @@ public class GenericRepository<T, TContext> : IRepository<T>
         if (entity != null)
         {
             Entity.Remove(entity);
+
             return entity;
         }
 
@@ -119,6 +128,7 @@ public class GenericRepository<T, TContext> : IRepository<T>
         var result = Entity.AsQueryable();
         if (!isTracking)
             result = result.AsNoTracking();
+
         return result;
     }
 
@@ -128,6 +138,7 @@ public class GenericRepository<T, TContext> : IRepository<T>
         if (!isTracking)
         {
             result = Entity.AsNoTracking().AsEnumerable();
+
             return result;
         }
 
@@ -139,6 +150,7 @@ public class GenericRepository<T, TContext> : IRepository<T>
         var result = Entity.Where(expression).AsQueryable();
         if (!isTracking)
             result = result.AsNoTracking();
+
         return result;
     }
 
@@ -148,6 +160,7 @@ public class GenericRepository<T, TContext> : IRepository<T>
         if (!isTracking)
         {
             result = Entity.AsNoTracking().ToList();
+
             return result;
         }
 
@@ -182,12 +195,12 @@ public class GenericRepository<T, TContext> : IRepository<T>
 
         return entity;
     }
-
     public IQueryable<T> GetWhere(Expression<Func<T, bool>> expression, bool isTracking = true)
     {
         var result = Entity.Where(expression).AsQueryable();
         if (!isTracking)
             result = result.AsNoTracking();
+
         return result;
     }
 
@@ -197,6 +210,7 @@ public class GenericRepository<T, TContext> : IRepository<T>
         if (!isTracking)
         {
             result = Entity.AsNoTracking().ToList();
+
             return result;
         }
 
@@ -217,9 +231,9 @@ public class GenericRepository<T, TContext> : IRepository<T>
     {
         Entity.UpdateRange(entities);
     }
-
     public void UpdateRange(IList<T> entities)
     {
         Entity.UpdateRange(entities);
     }
+    #endregion
 }

@@ -2,6 +2,9 @@
 
 namespace GenericRepository.Library;
 
+/// <summary>
+/// Any entity can be given. T has to be a class.
+/// </summary>
 public interface IRepository<T> where T : class
 {
     IQueryable<T> GetAll(bool isTracking = true);
