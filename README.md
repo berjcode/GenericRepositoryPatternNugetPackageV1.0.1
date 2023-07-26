@@ -1,4 +1,6 @@
-# Feature
+# Features
+
+[![MIT License][license-shield]][license-url]
 
 "Hello, I would like to talk about the features of GenericRepositoryPattern, a NuGet package I wrote. This package, besides providing a more comfortable use by using the GenericRepository pattern, makes database operations easier by coming with the UnitOfWork pattern."
 * You can work with the unitOfWork Design Pattern.
@@ -21,7 +23,7 @@ Errors are corrected as a result of feedback.
   dotnet add package GenericRepositoryandUnitOfWorkPattern --version 1.1.2
 ```
 # Use 
-##Create Repository
+## Create Repository
 ```
 //Interface- Abstract 
 public interface IProductRepositoryAsync : IRepositoryAsync<Product> {} 
@@ -79,9 +81,6 @@ public interface IProductRepositoryAsync : IRepositoryAsync<Product> {}
  ### Design Patterns:
     * Generic Repository   
     * Unit Of Work    
-                                                                                                                     
-   ###    By Abdullah Balikci - berjcode
-
       
        
   ## IRepositoryAsync Methods
@@ -147,4 +146,8 @@ public interface IProductRepositoryAsync : IRepositoryAsync<Product> {}
     void DeleteRange(IList<T> entities);
    ```
 
- 
+[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
+[license-url]: https://github.com/berjcode/GenericRepositoryPatternNugetPackageV1.0.1/blob/main/LICENSE
+                                                                                                                      
+   ###    By Abdullah Balikci - berjcode
+
