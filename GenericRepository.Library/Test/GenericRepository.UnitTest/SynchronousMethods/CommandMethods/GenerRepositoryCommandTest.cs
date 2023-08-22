@@ -32,4 +32,49 @@ public  class GenerRepositoryCommandTest
         mockDbSet.Verify(m => m.AddAsync(entity, It.IsAny<CancellationToken>()), Times.Once);
 
     }
+    [Fact]
+    public void DeleteById_EntityExists_RemovesSuccessfully()
+    {
+        // Arrange
+        var mockDbSet = new Mock<DbSet<ProductEntity>>();
+        var entityToDelete = new ProductEntity { Id = 1, Name = "Abdullah" };
+
+        mockDbSet.Setup(m => m.Find(It.IsAny<int>())).Returns(entityToDelete);
+
+        var mockContext = new Mock<TestDbContext>();
+        mockContext.Setup(c => c.Set<ProductEntity>()).Returns(mockDbSet.Object);
+
+        var repository = new GenericRepository<ProductEntity, TestDbContext>(mockContext.Object);
+
+        // Act
+        var deletedEntity = repository.DeleteById(1);
+
+        // Assert
+        mockDbSet.Verify(m => m.Find(1), Times.Once);
+        mockDbSet.Verify(m => m.Remove(It.IsAny<ProductEntity>()), Times.Once); 
+        Assert.NotNull(deletedEntity);
+    }
+
+    [Fact]
+    public void DeleteById_EntityIsNull_DoesNotRemove()
+    {
+        // Arrange
+        var mockDbSet = new Mock<DbSet<ProductEntity>>();
+        var entityToDelete = (ProductEntity)null;
+
+        mockDbSet.Setup(m => m.Find(It.IsAny<int>())).Returns(entityToDelete);
+
+        var mockContext = new Mock<TestDbContext>();
+        mockContext.Setup(c => c.Set<ProductEntity>()).Returns(mockDbSet.Object);
+
+        var repository = new GenericRepository<ProductEntity, TestDbContext>(mockContext.Object);
+
+        // Act
+        var deletedEntity = repository.DeleteById(1);
+
+        // Assert
+        mockDbSet.Verify(m => m.Find(1), Times.Once);
+        mockDbSet.Verify(m => m.Remove(It.IsAny<ProductEntity>()), Times.Never); 
+        Assert.Null(deletedEntity);
+    }
 }
