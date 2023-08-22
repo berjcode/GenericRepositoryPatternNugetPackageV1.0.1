@@ -77,4 +77,6 @@ public  class GenerRepositoryCommandTest
         mockDbSet.Verify(m => m.Remove(It.IsAny<ProductEntity>()), Times.Never); 
         Assert.Null(deletedEntity);
     }
+
+   
 }
