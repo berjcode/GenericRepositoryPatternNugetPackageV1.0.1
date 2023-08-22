@@ -101,6 +101,9 @@ Thumbs.db
 /GenericRepository.Library/GenericRepository.Library/obj/project.assets.json
 /GenericRepository.Library/GenericRepository.Library/obj/project.nuget.cache
 /GenericRepository.Library/.vs/GenericRepository.Library/FileContentIndex/86a359d0-9a63-4c2f-8cce-4f88345f3315.vsidx
+
+/GenericRepository.Library/GenericRepository.Library.sln
+/GenericRepository.Library/.vs/GenericRepository.Library/FileContentIndex/1edd5d11-add2-4d61-bddc-3641fb875d7c.vsidx
 /GenericRepository.Library/Test/GenericRepository.UnitTest/bin/Debug/net7.0/CoverletSourceRootsMapping
 /GenericRepository.Library/Test/GenericRepository.UnitTest/obj/Debug/net7.0/.NETCoreApp,Version=v7.0.AssemblyAttributes.cs
 /GenericRepository.Library/Test/GenericRepository.UnitTest/obj/Debug/net7.0/GenericRepository.UnitTest.AssemblyInfo.cs
@@ -109,10 +112,8 @@ Thumbs.db
 /GenericRepository.Library/Test/GenericRepository.UnitTest/obj/Debug/net7.0/GenericRepository.UnitTest.csproj.AssemblyReference.cache
 /GenericRepository.Library/Test/GenericRepository.UnitTest/obj/Debug/net7.0/GenericRepository.UnitTest.GeneratedMSBuildEditorConfig.editorconfig
 /GenericRepository.Library/Test/GenericRepository.UnitTest/obj/Debug/net7.0/GenericRepository.UnitTest.GlobalUsings.g.cs
-/GenericRepository.Library/Test/GenericRepository.UnitTest/GenericRepository.UnitTest.csproj
 /GenericRepository.Library/Test/GenericRepository.UnitTest/obj/GenericRepository.UnitTest.csproj.nuget.dgspec.json
 /GenericRepository.Library/Test/GenericRepository.UnitTest/obj/GenericRepository.UnitTest.csproj.nuget.g.props
 /GenericRepository.Library/Test/GenericRepository.UnitTest/obj/GenericRepository.UnitTest.csproj.nuget.g.targets
 /GenericRepository.Library/Test/GenericRepository.UnitTest/obj/project.assets.json
 /GenericRepository.Library/Test/GenericRepository.UnitTest/obj/project.nuget.cache
-/GenericRepository.Library/GenericRepository.Library.sln
