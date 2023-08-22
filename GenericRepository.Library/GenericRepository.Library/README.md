@@ -11,14 +11,14 @@
 
 Errors are corrected as a result of feedback.
 
-# GenericRepositoryPatternNugetPackageV1.1.2
+# GenericRepositoryPatternNugetPackageV1.1.4
  A nuget package I wrote to use the generic repository pattern more efficiently.
 # Version
 .net 7.0
 # Install
 ```
 
-  dotnet add package GenericRepositoryandUnitOfWorkPattern --version 1.1.2
+  dotnet add package GenericRepositoryandUnitOfWorkPattern --version 1.1.4
 ```
 # Use 
 ##Create Repository
@@ -87,7 +87,8 @@ public interface IProductRepositoryAsync : IRepositoryAsync<Product> {}
   ## IRepositoryAsync Methods
 
    ```
-     IQueryable<T> GetAll(bool isTracking = true);
+    IReadOnlyList<T> GetAllReadOnlyList(bool isTracking =true);
+    IQueryable<T> GetAll(bool isTracking = true);
     IQueryable<T> GetAllExpressionAsync(Expression<Func<T, bool>> expression, bool isTracking = true);
     IEnumerable<T> GetAllEnumerable(bool isTracking = true);
     IList<T> GetAllWithList(bool isTracking = true);
@@ -119,6 +120,7 @@ public interface IProductRepositoryAsync : IRepositoryAsync<Product> {}
   ## IRepository
 
    ```
+    IReadOnlyList<T> GetAllReadOnlyList(bool isTracking =true);
     IQueryable<T> GetAll(bool isTracking = true);
     IQueryable<T> GetAllExpression(Expression<Func<T, bool>> expression, bool isTracking = true);
     IEnumerable<T> GetAllEnumerable(bool isTracking = true);

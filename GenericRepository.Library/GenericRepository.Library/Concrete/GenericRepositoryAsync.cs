@@ -202,17 +202,14 @@ public class GenericRepositoryAsync<T, TContext> : IRepositoryAsync<T>
     {
         Entity.UpdateRange(entities);
     }
-
     public async Task<bool> AnyAsync(Expression<Func<T, bool>> predicate)
     {
         return await Entity.AnyAsync(predicate);
     }
-
     public async Task<int> CountAsync(Expression<Func<T, bool>> predicate = null)
     {
         return await (predicate == null ? Entity.CountAsync() : Entity.CountAsync(predicate));
     }
-
     public IQueryable<T> GetAllExpressionAsync(Expression<Func<T, bool>> expression, bool isTracking = true)
     {
         var result = Entity.Where(expression).AsQueryable();
@@ -220,6 +217,14 @@ public class GenericRepositoryAsync<T, TContext> : IRepositoryAsync<T>
             result = result.AsNoTracking();
 
         return result;
+    }
+    public IReadOnlyList<T> GetAllReadOnlyList(bool isTracking = true)
+    {
+        var result = Entity.AsQueryable();
+        if (!isTracking)
+            result = result.AsNoTracking();
+
+        return result.ToList().AsReadOnly();
     }
     #endregion
 }

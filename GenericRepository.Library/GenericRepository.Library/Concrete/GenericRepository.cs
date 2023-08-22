@@ -123,6 +123,14 @@ public class GenericRepository<T, TContext> : IRepository<T>
         Entity.RemoveRange(entities);
     }
 
+    public IReadOnlyList<T> GetAllReadOnlyList(bool isTracking = true)
+    {
+        var result = Entity.AsQueryable();
+        if (!isTracking)
+            result = result.AsNoTracking();
+
+        return result.ToList().AsReadOnly();
+    }
     public IQueryable<T> GetAll(bool isTracking = true)
     {
         var result = Entity.AsQueryable();

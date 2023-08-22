@@ -7,6 +7,7 @@ namespace GenericRepository.Library;
 /// </summary>
 public interface IRepositoryAsync<T> where T : class
 {
+    IReadOnlyList<T> GetAllReadOnlyList(bool isTracking = true);
     IQueryable<T> GetAll(bool isTracking = true);
     IQueryable<T> GetAllExpressionAsync(Expression<Func<T, bool>> expression, bool isTracking = true);
     IEnumerable<T> GetAllEnumerable(bool isTracking = true);
