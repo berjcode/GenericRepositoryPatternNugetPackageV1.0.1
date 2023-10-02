@@ -125,3 +125,5 @@ Thumbs.db
 /GenericRepository.Library/Test/GenericRepository.UnitTest/bin/Debug/net7.0/es/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
 /GenericRepository.Library/Test/GenericRepository.UnitTest/obj/Debug/net7.0
 /GenericRepository.Library/Test/GenericRepository.UnitTest/GenericRepository.UnitTest.csproj
+/GenericRepository.Library/GenericRepository.Library/bin/Debug
+/GenericRepository.Library/GenericRepository.Library/obj/Debug
