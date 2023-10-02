@@ -11,14 +11,14 @@
 
 Errors are corrected as a result of feedback.
 
-# GenericRepositoryPatternNugetPackageV1.1.4
+# GenericRepositoryPatternNugetPackageV1.2
  A nuget package I wrote to use the generic repository pattern more efficiently.
 # Version
 .net 7.0
 # Install
 ```
 
-  dotnet add package GenericRepositoryandUnitOfWorkPattern --version 1.1.4
+  dotnet add package GenericRepositoryandUnitOfWorkPattern --version 1.2
 ```
 # Use 
 ##Create Repository
@@ -74,7 +74,7 @@ public interface IProductRepositoryAsync : IRepositoryAsync<Product> {}
    ```
 ## Packages
 
-* EntityFramework Core 7.0.5
+* EntityFramework Core 7.0.11
 
  ### Design Patterns:
     * Generic Repository   
@@ -87,66 +87,70 @@ public interface IProductRepositoryAsync : IRepositoryAsync<Product> {}
   ## IRepositoryAsync Methods
 
    ```
-    IReadOnlyList<T> GetAllReadOnlyList(bool isTracking =true);
     IQueryable<T> GetAll(bool isTracking = true);
-    IQueryable<T> GetAllExpressionAsync(Expression<Func<T, bool>> expression, bool isTracking = true);
-    IEnumerable<T> GetAllEnumerable(bool isTracking = true);
+    Task<T> GetFirstAsync(bool isTracking = true);
     IList<T> GetAllWithList(bool isTracking = true);
+    Task<T> GetFirstCompiledQuery(bool isTracking = false);
+    IEnumerable<T> GetAllEnumerable(bool isTracking = true);
+    Task<bool> AnyAsync(Expression<Func<T, bool>> predicate);
+    IReadOnlyList<T> GetAllReadOnlyList(bool isTracking = true);
+    Task<int> CountAsync(Expression<Func<T, bool>> predicate = null);
+    Task<T> GetFirstAsync(bool isTracking, CancellationToken cancellationToken);
     IQueryable<T> GetWhere(Expression<Func<T, bool>> expression, bool isTracking = true);
     IList<T> GetWhereList(Expression<Func<T, bool>> expression, bool isTracking = true);
+    IQueryable<T> GetAllExpressionAsync(Expression<Func<T, bool>> expression, bool isTracking = true);
     Task<T> GetFirstByExpressionAsync(Expression<Func<T, bool>> expression, bool isTracking = true, CancellationToken cancellationToken = default);
-    Task<T> GetFirstAsync(bool isTracking = true);
-    Task<T> GetFirstAsync(bool isTracking, CancellationToken cancellationToken);
-    Task<bool> AnyAsync(Expression<Func<T, bool>> predicate);
-    Task<int> CountAsync(Expression<Func<T, bool>> predicate = null);
-    Task AddAsync(T entity, CancellationToken cancellationToken = default);
-    Task AddRangeAsync(IEnumerable<T> entities, CancellationToken cancellationToken = default);
-    Task AddRamgeAsync(ICollection<T> entities, CancellationToken cancellationToken = default);
-    Task AddRangeAsync(IList<T> entities, CancellationToken cancellationToken = default);
+   // Command
     void Update(T entity);
+    void Delete(T entity);
+    Task DeleteByIdAsync(int id);
+    Task DeleteByIdAsync(Guid id);
+    Task DeleteByIdAsync(string id);
+    void DeleteRange(IList<T> entities);
+    void DeleteRange(ICollection<T> entities);
+    void DeleteRange(IEnumerable<T> entities);
     void UpdateRange(ICollection<T> entities);
     void UpdateRange(IEnumerable<T> entities);
-    Task DeleteByIdAsync(int id);
-    Task DeleteByIdAsync(string id);
-    Task DeleteByIdAsync(Guid id);
+    Task AddAsync(T entity, CancellationToken cancellationToken = default);
+    Task AddRangeAsync(IList<T> entities, CancellationToken cancellationToken = default);
+    Task AddRamgeAsync(ICollection<T> entities, CancellationToken cancellationToken = default);
+    Task AddRangeAsync(IEnumerable<T> entities, CancellationToken cancellationToken = default);
     Task DeleteByExpressionAsync(Expression<Func<T, bool>> expression, CancellationToken cancellationToken = default);
-    void Delete(T entity);
-    void DeleteRange(IEnumerable<T> entities);
-    void DeleteRange(ICollection<T> entities);
-    void DeleteRange(IList<T> entities);
 
    ```
 
   ## IRepository
 
    ```
-    IReadOnlyList<T> GetAllReadOnlyList(bool isTracking =true);
-    IQueryable<T> GetAll(bool isTracking = true);
-    IQueryable<T> GetAllExpression(Expression<Func<T, bool>> expression, bool isTracking = true);
-    IEnumerable<T> GetAllEnumerable(bool isTracking = true);
-    IList<T> GetAllWithList(bool isTracking = true);
-    IQueryable<T> GetWhere(Expression<Func<T, bool>> expression, bool isTracking = true);
-    IList<T> GetWhereWithList(Expression<Func<T, bool>> expression, bool isTracking = true);
-    T GetFirstByExpression(Expression<Func<T, bool>> expression, bool isTracking = true);
+    // Query
     T GetFirst(bool isTracking = true);
+    IQueryable<T> GetAll(bool isTracking = true);
     bool Any(Expression<Func<T, bool>> predicate);
+    IList<T> GetAllWithList(bool isTracking = true);
     int Count(Expression<Func<T, bool>> predicate = null);
+    IEnumerable<T> GetAllEnumerable(bool isTracking = true);
+    IReadOnlyList<T> GetAllReadOnlyList(bool isTracking =true);
+    IQueryable<T> GetWhere(Expression<Func<T, bool>> expression, bool isTracking = true);
+    T GetFirstByExpression(Expression<Func<T, bool>> expression, bool isTracking = true);
+    IList<T> GetWhereWithList(Expression<Func<T, bool>> expression, bool isTracking = true);
+    IQueryable<T> GetAllExpression(Expression<Func<T, bool>> expression, bool isTracking = true);
+    // Command
     void Add(T entity);
-    void AddRange(ICollection<T> entities);
-    void AddRange(IEnumerable<T> entities);
-    void AddRange(IList<T> entities);
     void Update(T entity);
+    T DeleteById(int id);
+    void Delete(T entity);
+    T DeleteById(Guid id);
+    T DeleteById(string id);
+    void AddRange(IList<T> entities);
+    void UpdateRange(IList<T> entities);
+    void DeleteRange(IList<T> entities);
+    void AddRange(IEnumerable<T> entities);
+    void AddRange(ICollection<T> entities);
     void UpdateRange(ICollection<T> entities);
     void UpdateRange(IEnumerable<T> entities);
-    void UpdateRange(IList<T> entities);
-    T DeleteById(int id);
-    T DeleteById(string id);
-    T DeleteById(Guid id);
-    T DeleteByExpression(Expression<Func<T, bool>> expression);
-    void Delete(T entity);
     void DeleteRange(ICollection<T> entities);
     void DeleteRange(IEnumerable<T> entities);
-    void DeleteRange(IList<T> entities);
+    T DeleteByExpression(Expression<Func<T, bool>> expression);
    ```
 
  
