@@ -12,6 +12,12 @@ public class GenericRepositoryAsync<T, TContext> : IRepositoryAsync<T>
     private readonly TContext _context;
     #endregion
 
+    private static readonly Func<TContext, bool, Task<T>> GetFirstCompiled =
+     EF.CompileAsyncQuery((TContext context, bool isTracking) =>
+     isTracking == true ? context.Set<T>().FirstOrDefault()
+     : context.Set<T>().AsNoTracking().FirstOrDefault());
+
+
     #region Ctor
     public GenericRepositoryAsync(TContext context)
     {
@@ -187,7 +193,6 @@ public class GenericRepositoryAsync<T, TContext> : IRepositoryAsync<T>
         return entity;
     }
 
-
     public void Update(T entity)
     {
         Entity.Update(entity);
@@ -225,6 +230,10 @@ public class GenericRepositoryAsync<T, TContext> : IRepositoryAsync<T>
             result = result.AsNoTracking();
 
         return result.ToList().AsReadOnly();
+    }
+    public async Task<T> GetFirstCompiledQuery(bool isTracking = false)
+    {
+        return await GetFirstCompiled(_context, isTracking);
     }
     #endregion
 }
